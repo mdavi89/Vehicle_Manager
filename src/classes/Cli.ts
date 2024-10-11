@@ -298,9 +298,9 @@ class Cli {
         if (answers.vehicleToTow === truck) {
           console.log('This truck cannot tow itself');
           this.performActions();
-        }
+        } else {
         truck.tow(answers.vehicleToTow);
-        this.performActions();
+        this.performActions();}
         // TODO: check if the selected vehicle is the truck
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
@@ -401,6 +401,9 @@ class Cli {
                 this.findVehicleToTow(truck);
                 return;
               }
+              else {
+                console.log(`${this.vehicles[i]} is not a truck.`)
+              }
             }
           }
         }
@@ -409,6 +412,9 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
                 console.log('You did a wheelie!')
+              }
+              else {
+                console.log(`${this.vehicles[i]} is not a motorbike.`)
               }
             }
           }
