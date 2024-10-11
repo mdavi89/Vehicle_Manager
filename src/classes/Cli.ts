@@ -72,8 +72,8 @@ class Cli {
         }
         else if (answers.vehicleType === 'Truck'){
           this.createTruck();
-        }
-        this.createMotorbike();
+        } else {
+        this.createMotorbike();}
         // TODO: add statements to create a truck or motorbike if the user selects the respective vehicle type
       });
   }
@@ -266,7 +266,7 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          [],
+          [new Wheel(answers.frontWheelDiameter, answers.frontWheelBrand), new Wheel(answers.rearWheelDiameter, answers.rearWheelBrand)]
         );
         // push the car to the vehicles array
         this.vehicles.push(motorbike);
@@ -413,7 +413,8 @@ class Cli {
           for (let i = 0; i < this.vehicles.length; i++) {
             if (this.vehicles[i].vin === this.selectedVehicleVin) {
               if (this.vehicles[i] instanceof Motorbike) {
-                console.log('You did a wheelie!')
+                let motorbike: Motorbike = this.vehicles[i] as Motorbike;
+                motorbike.wheelie(motorbike);
               }
               else {
                 let make = this.vehicles[i].make;
