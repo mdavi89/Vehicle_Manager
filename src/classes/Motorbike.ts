@@ -61,6 +61,9 @@ class Motorbike extends Vehicle{
       if (vehicle.wheels.length === 2) {
         console.log(`Motorbike ${make} ${model} is doing a wheelie!`)
       }
+      else {
+        console.log(`${make} ${model} is not a motorbike.`)
+      }
   }
 
   // TODO: Override the printDetails method from the Vehicle class
