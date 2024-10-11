@@ -402,7 +402,9 @@ class Cli {
                 return;
               }
               else {
-                console.log(`${this.vehicles[i]} is not a truck.`)
+                let make = this.vehicles[i].make;
+                let model = this.vehicles[i].model;
+                console.log(`${make} ${model} is not a truck.`);
               }
             }
           }
@@ -414,7 +416,9 @@ class Cli {
                 console.log('You did a wheelie!')
               }
               else {
-                console.log(`${this.vehicles[i]} is not a motorbike.`)
+                let make = this.vehicles[i].make;
+                let model = this.vehicles[i].model;
+                console.log(`${make} ${model} is not a motorbike.`)
               }
             }
           }
